@@ -242,6 +242,26 @@ void ToolbarView::Init()
         UTF16ToWide(ui::GetStringUTF16(IDS_TOOLTIP_ABOUT)));
     about_btn_->SetAccessibleName(ui::GetStringUTF16(IDS_ACCNAME_ABOUT));
     about_btn_->set_id(VIEW_ID_ABOUT_BUTTON);
+
+    // [ADD] 20200919 yangzheng
+    mgrserver_install_btn_ = new view::ImageButton(this);
+    mgrserver_install_btn_->set_triggerable_event_flags(ui::EF_LEFT_BUTTON_DOWN |
+        ui::EF_MIDDLE_BUTTON_DOWN);
+    mgrserver_install_btn_->set_tag(IDC_MGRSERVER);
+    mgrserver_install_btn_->SetTooltipText(
+        UTF16ToWide(ui::GetStringUTF16(IDS_TOOLTIP_MGRSERVER)));
+    mgrserver_install_btn_->SetAccessibleName(ui::GetStringUTF16(IDS_ACCNAME_MGRSERVER));
+    mgrserver_install_btn_->set_id(VIEW_ID_MGRSERVER_BUTTON);
+
+    // [ADD] 20200920 yangzheng
+    mgrclient_open_btn_ = new view::ImageButton(this);
+    mgrclient_open_btn_->set_triggerable_event_flags(ui::EF_LEFT_BUTTON_DOWN |
+        ui::EF_MIDDLE_BUTTON_DOWN);
+    mgrclient_open_btn_->set_tag(IDC_MGRCLIENT);
+    mgrclient_open_btn_->SetTooltipText(
+        UTF16ToWide(ui::GetStringUTF16(IDS_TOOLTIP_MGRCLIENT)));
+    mgrclient_open_btn_->SetAccessibleName(ui::GetStringUTF16(IDS_ACCNAME_MGRCLIENT));
+    mgrclient_open_btn_->set_id(VIEW_ID_MGRCLIENT_BUTTON);
     
     search_previous_btn_ = new view::ImageButton(this);
     search_previous_btn_->set_triggerable_event_flags(ui::EF_LEFT_BUTTON_DOWN |
@@ -309,6 +329,8 @@ void ToolbarView::Init()
     AddChildView(search_reset_btn_);
     AddChildView(search_edit_);
     AddChildView(location_bar_);
+    AddChildView(mgrserver_install_btn_);
+    AddChildView(mgrclient_open_btn_);
     //AddChildView(browser_actions_);
     //AddChildView(app_menu_);
 
@@ -656,6 +678,12 @@ void ToolbarView::Layout()
 	about_btn_->SetBounds(cmd_dlg_btn_->x() + cmd_dlg_btn_->width() + kButtonSpacing,
         child_y, about_btn_->GetPreferredSize().width(), child_height);
 
+    mgrserver_install_btn_->SetBounds(about_btn_->x() + about_btn_->width() + kButtonSpacing,
+        child_y, mgrserver_install_btn_->GetPreferredSize().width(), child_height);
+
+    mgrclient_open_btn_->SetBounds(mgrserver_install_btn_->x() + mgrserver_install_btn_->width() + kButtonSpacing,
+        child_y, mgrclient_open_btn_->GetPreferredSize().width(), child_height);
+
 	int searchbar_x = this->width() - ( SEARCH_BAR_LENGTH
 										+ search_previous_btn_->GetPreferredSize().width()
 										+ search_next_btn_->GetPreferredSize().width()
@@ -919,6 +947,16 @@ void ToolbarView::LoadImages()
 	about_btn_->SetImage(view::CustomButton::BS_HOT, tp->GetBitmapNamed(IDR_INFO_H));
 	about_btn_->SetImage(view::CustomButton::BS_PUSHED, tp->GetBitmapNamed(IDR_INFO_P));
 	about_btn_->SetImage(view::CustomButton::BS_DISABLED, tp->GetBitmapNamed(IDR_INFO_D));
+
+    mgrserver_install_btn_->SetImage(view::CustomButton::BS_NORMAL, tp->GetBitmapNamed(IDR_INFO));
+    mgrserver_install_btn_->SetImage(view::CustomButton::BS_HOT, tp->GetBitmapNamed(IDR_INFO_H));
+    mgrserver_install_btn_->SetImage(view::CustomButton::BS_PUSHED, tp->GetBitmapNamed(IDR_INFO_P));
+    mgrserver_install_btn_->SetImage(view::CustomButton::BS_DISABLED, tp->GetBitmapNamed(IDR_INFO_D));
+
+    mgrclient_open_btn_->SetImage(view::CustomButton::BS_NORMAL, tp->GetBitmapNamed(IDR_INFO));
+    mgrclient_open_btn_->SetImage(view::CustomButton::BS_HOT, tp->GetBitmapNamed(IDR_INFO_H));
+    mgrclient_open_btn_->SetImage(view::CustomButton::BS_PUSHED, tp->GetBitmapNamed(IDR_INFO_P));
+    mgrclient_open_btn_->SetImage(view::CustomButton::BS_DISABLED, tp->GetBitmapNamed(IDR_INFO_D));
 
 	search_previous_btn_->SetImage(view::CustomButton::BS_NORMAL, tp->GetBitmapNamed(IDR_FIND_PREVIOUS));
 	search_previous_btn_->SetImage(view::CustomButton::BS_HOT, tp->GetBitmapNamed(IDR_FIND_PREVIOUS_H));

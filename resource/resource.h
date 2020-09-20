@@ -144,6 +144,8 @@
 #define IDS_TOOLTIP_CMD_SCATTER              12016
 #define IDS_TOOLTIP_SCROLL_END               12017
 #define IDS_TOOLTIP_CMD_DLG                  12018
+#define IDS_TOOLTIP_MGRSERVER                    12019
+#define IDS_TOOLTIP_MGRCLIENT             12020
 
 
 #define IDS_ACCNAME_NEW                    12039
@@ -179,6 +181,8 @@
 #define IDS_ACCNAME_CMD_SCATTER              12073
 #define IDS_ACCNAME_SCROLL_END               12074
 #define IDS_ACCNAME_CMD_DLG                  12075
+#define IDS_ACCNAME_MGRSERVER                 12076
+#define IDS_ACCNAME_MGRCLIENT               12077
 
 
 #define IDS_BOOMARK_BAR_OTHER_BOOKMARKED    12391

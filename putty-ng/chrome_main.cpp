@@ -43,14 +43,14 @@ void ChromeMain::Run()
     // Show Main Window...
     Browser* chrome = Browser::CreateInSpecifiedSize(config->width, config->height, config->maximized, config->alwaysontop);
 
-	TabContentsWrapper* tabContent = 
-		CmdLineHandler::GetInstance()->isLeaderStartWithCmd() ? chrome->AddTabWithGlobalCfg(true)
-			: chrome->AddBlankTab(true);
+    TabContentsWrapper* tabContent =
+        CmdLineHandler::GetInstance()->isLeaderStartWithCmd() ? chrome->AddTabWithGlobalCfg(true)
+        : chrome->AddBlankTab(true);
     if (tabContent){
-		chrome->window()->Show();
-		view::AcceleratorHandler accelerator_handler;
-		MessageLoopForUI::current()->Run(&accelerator_handler);
-	}
+        chrome->window()->Show();
+        view::AcceleratorHandler accelerator_handler;
+        MessageLoopForUI::current()->Run(&accelerator_handler);
+    }
 	WindowInterface::GetInstance()->at_exit();
     ui::ResourceBundle::CleanupSharedInstance();
 }

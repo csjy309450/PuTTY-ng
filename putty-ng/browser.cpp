@@ -1319,7 +1319,36 @@ void Browser::ExecuteCommandWithDisposition(
     //case IDC_UPGRADE_DIALOG:        OpenUpdateChromeDialog();         break;
     //case IDC_VIEW_INCOMPATIBILITIES: ShowAboutConflictsTab();         break;
     //case IDC_HELP_PAGE:             ShowHelpTab();                    break;
-
+    case IDC_MGRSERVER: 
+    {
+        OutputDebugStringA("[YZ] IDC_MGRSERVER\n");
+        // DONE 20200919 yangzheng 增加按钮事件句柄
+        // 0、TODO 20200920 判断是否已经安装客户端服务
+        // 1、上传客户端程序文件, TODO 增加密码和账号动态输入功能
+        int ret = system("call upload.bat E:/VMware/YZ/github/SSH/MyPuTTY-ng/x86/Debug/bin test.txt root 123 192.168.222.136/home/yz/");
+        if (ret != 0)
+        {
+            OutputDebugStringA("[YZ] upload pkg failed\n");
+            break;
+        }
+        // 2、启动客户端服务
+        TabContents* contents = GetSelectedTabContents();
+        const char * cmd = "cd /home/yz/;cat test.txt\r";
+        contents->SendCmd(cmd, strlen(cmd));
+        OutputDebugStringA("[YZ] send CMD");
+        // TODO 20200920 增加判断安装成功的功能，并根据安装成功否打开管理界面
+    } break;
+    case IDC_MGRCLIENT:
+    {
+        OutputDebugStringA("[YZ] IDC_MGRCLIENT\n");
+        //("E:/VMware/YZ/github/SSH/MyPuTTY-ng/x86/Debug/bin/linux-mgr.exe", SW_SHOWMAXIMIZED);
+        int ret = WinExec("E:/VMware/YZ/github/SSH/MyPuTTY-ng/x86/Debug/bin/linux-mgr-client.exe", SW_SHOWNORMAL);
+        if (ret <= 31)
+        {
+            OutputDebugStringA("[YZ] run linux-mgr-client.exe failed\n");
+            break;
+        }
+    } break;
     default:
         LOG(WARNING) << "Received Unimplemented Command: " << id;
         break;

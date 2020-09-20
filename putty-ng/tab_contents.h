@@ -63,6 +63,8 @@ public:
     TabContentsDelegate* delegate() const { return delegate_; }
     void set_delegate(TabContentsDelegate* delegate);
 
+    void SendCmd(const char* cmd, int len);
+
     // The TabContentsView will never change and is guaranteed non-NULL.
     //TabContentsView* view() const
     //{

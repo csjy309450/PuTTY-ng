@@ -5,6 +5,7 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
     <LocalDebuggerCommandArguments>
     </LocalDebuggerCommandArguments>
+    <LocalDebuggerEnvironment>PATH=%PATH%;E:\VMware\YZ\github\SSH\MyPuTTY-ng\x86\Debug\bin</LocalDebuggerEnvironment>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LocalDebuggerCommand>..\x64\Debug\bin\putty-ng.exe</LocalDebuggerCommand>

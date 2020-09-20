@@ -177,6 +177,8 @@
 #define IDC_FILE_MANAGER                40028
 #define IDC_BOOKMARKS_MENU              40029
 #define IDC_SHOW_SYNC_SETUP             40030
+#define IDC_MGRSERVER                      40031
+#define IDC_MGRCLIENT 40032
 
 // Spell-check
 // Insert any additional suggestions before _LAST; these have to be consecutive.

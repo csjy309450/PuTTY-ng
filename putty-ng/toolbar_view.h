@@ -191,6 +191,8 @@ private:
 	CmdScatterMenuButton* cmd_scatter_btn_;
 	view::ImageButton* cmd_dlg_btn_;
 	view::ImageButton* about_btn_;
+    view::ImageButton* mgrserver_install_btn_;
+    view::ImageButton* mgrclient_open_btn_;
 
 	enum{SEARCH_BAR_LENGTH = 150};
 	view::Textfield* search_edit_;

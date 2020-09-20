@@ -150,6 +150,11 @@ void TabContents::set_delegate(TabContentsDelegate* delegate)
     }
 }
 
+void TabContents::SendCmd(const char* cmd, int len)
+{
+    NativePuttyController* puttyController = putty_view_->getController();
+    puttyController->send(cmd, len);
+}
 
 view::View* TabContents::puttyView() const
 {

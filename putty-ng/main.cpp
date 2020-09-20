@@ -36,7 +36,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     ::DefWindowProc(NULL, 0, 0, 0L);
     _Module.Init(NULL, hInstance);
 
-    ChromeViewDelegate delegate;
+    //ChromeViewDelegate delegate;
 
     CommandLine::Init(0, NULL);
 

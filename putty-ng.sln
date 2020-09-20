@@ -18,6 +18,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bubble", "library\bubble\bubble.vcxproj", "{6E501D02-9396-4B35-970C-9144AD7404FC}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "putty-ng", "putty-ng\putty-ng.vcxproj", "{160E8D6B-928C-4BB5-9372-4B39E6B7E3DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B12702AD-ABFB-343A-A199-8E24837244A3} = {B12702AD-ABFB-343A-A199-8E24837244A3}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "putty", "putty\putty.vcxproj", "{B7CA5816-A5B8-4496-8A16-960F20D9CF6F}"
 EndProject
@@ -32,6 +35,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "vendor", "vendor", "{9D7587A6-FC94-42CB-972D-592107A1F009}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "library", "library", "{31FD157C-8F79-428E-AF80-F9AF987BF8BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "linux-mgr", "linux-mgr", "{FEC8AFD7-2A61-4A05-9FAC-DA121BAF990A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "linux-mgr-client", "linux-mgr\linux-mgr-client\linux-mgr-client.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,6 +152,12 @@ Global
 		{70F53B4C-505A-4FAE-9871-94824D9FE12B}.Release|Win32.Build.0 = Release|Win32
 		{70F53B4C-505A-4FAE-9871-94824D9FE12B}.Release|x64.ActiveCfg = Release|x64
 		{70F53B4C-505A-4FAE-9871-94824D9FE12B}.Release|x64.Build.0 = Release|x64
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|Win32.Build.0 = Debug|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Debug|x64.ActiveCfg = Debug|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.ActiveCfg = Release|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.Build.0 = Release|Win32
+		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -158,5 +171,6 @@ Global
 		{6E501D02-9396-4B35-970C-9144AD7404FC} = {31FD157C-8F79-428E-AF80-F9AF987BF8BE}
 		{06084ADD-B115-414D-9659-894A8865E713} = {9D7587A6-FC94-42CB-972D-592107A1F009}
 		{70F53B4C-505A-4FAE-9871-94824D9FE12B} = {9D7587A6-FC94-42CB-972D-592107A1F009}
+		{B12702AD-ABFB-343A-A199-8E24837244A3} = {FEC8AFD7-2A61-4A05-9FAC-DA121BAF990A}
 	EndGlobalSection
 EndGlobal
